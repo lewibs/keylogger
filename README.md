@@ -20,7 +20,7 @@ To use lewibs-keylogger in a project:
   let logger = new Keylogger();
 ```
 
-There are 2 important fields to note:
+There are 3 important fields to note:
 
 Keylogger.prototype.pressed which is:
 ```js
@@ -68,6 +68,14 @@ Overall you get an object which looks like this:
     stop: stop(),
     kill: kill(),
   }
+```
+
+finally there are four unique keys:
+```js
+  const WHEEL = "wheel";
+  const LEFTMOUSE = "leftmouse";
+  const MIDDLEMOUSE = "middlemouse";
+  const RIGHTMOUSE = "rightmouse";
 ```
 
 # test
