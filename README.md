@@ -22,9 +22,27 @@ Keylogger.history which is:
   
 Additionally there are three prototypes attached:
 ```
-start() : which starts logging
-stop(): which pauses the logging
-kill(): which pauses the logging and also removes the history
+  start() : which starts logging
+  stop(): which pauses the logging
+  kill(): which pauses the logging and also removes the history
+```
+
+Overall you get an object which looks like this:
+```
+  {
+    //privates
+    _events: [],
+    
+    //public fields
+    isKeylogger: true,
+    pressed: {},
+    history[],
+    
+    //public methods
+    start: start(),
+    stop: stop(),
+    kill: kill(),
+  }
 ```
 
 # test
