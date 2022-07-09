@@ -5,14 +5,14 @@ This is used to log the keys that the user presses in browser
 There are 2 important fields to note:
 
 Keylogger.pressed which is:
-```json
+```
   {
     keynames:bool
   }
 ```
   
 Keylogger.history which is:
-```json
+```
   [{
     pressed:{keynames:bool},
     time: unixTimeInt,
