@@ -6,11 +6,12 @@ const RIGHTMOUSE = "rightmouse";
 class Keylogger {
     
     constructor() {
+        this._target = window;
+        this._events = [];
+
         this.isKeylogger  = true;
-        this.target = window;
         this.pressed = {};
         this.history = [];
-        this.events = [];
 
         this.start();
     }
@@ -73,12 +74,12 @@ class Keylogger {
                 event(e);
             }
     
-            this.events.push({
+            this._events.push({
                 trigger: trigger,
                 dispatch: dispatch,
             });
     
-            this.target.addEventListener(trigger, dispatch);
+            this._target.addEventListener(trigger, dispatch);
         }
 
         const splitEvent = (name) => {
@@ -91,13 +92,13 @@ class Keylogger {
             };
             
             let eventEnd = (e)=>{
-                this.target.dispatchEvent(formatCustom(endName, e));
+                this._target.dispatchEvent(formatCustom(endName, e));
                 timer = undefined;
             };
             
             let eventStart = (e)=>{
                 if (timer === undefined) {
-                    this.target.dispatchEvent(formatCustom(startName, e));
+                    this._target.dispatchEvent(formatCustom(startName, e));
                 }
                 
                 clearTimeout(timer);
@@ -107,7 +108,7 @@ class Keylogger {
             addEvent(name, eventStart);
         }
 
-        //make custom events - nameend and namestart
+        //make custom _events - nameend and namestart
         splitEvent('wheel');
         splitEvent('mousemove');
         
@@ -129,8 +130,8 @@ class Keylogger {
     }
 
     stop() {
-        this.events.forEach((v)=>{
-            this.target.removeEventListener(v.trigger, v.dispatch);
+        this._events.forEach((v)=>{
+            this._target.removeEventListener(v.trigger, v.dispatch);
         });
     }
 
