@@ -10,6 +10,8 @@ function App() {
   const lastHistory = logger.history[logger.history.length - 1] || {};
 
   React.useEffect(()=>{
+    window.logger = logger;
+
     window.addEventListener("keydown", ()=>{
       setToggle(p=>!p);
     });
