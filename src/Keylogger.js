@@ -151,4 +151,7 @@ class Keylogger {
     }
 }
 
+Keylogger.instance = new Keylogger();
+Keylogger.instance.stop();
+
 module.exports = Keylogger;

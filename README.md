@@ -17,20 +17,25 @@ To use lewibs-keylogger in a project:
 
 There are 2 important fields to note:
 
-Keylogger.pressed which is:
+Keylogger.prototype.pressed which is:
 ```js
   {
     keynames:bool
   }
 ```
   
-Keylogger.history which is:
+Keylogger.prototype.history which is:
 ```js
   [{
     pressed:{keynames:bool},
     time: unixTimeInt,
     event: Event,
   }]
+```
+
+Keylogger.instance
+```js
+  Keylogger.instance : new Keylogger();
 ```
   
 Additionally there are three prototypes attached:
@@ -49,6 +54,7 @@ Overall you get an object which looks like this:
     
     //public fields
     isKeylogger: true,
+    global: Keylogger,
     pressed: {},
     history[],
     
