@@ -32,6 +32,7 @@ Overall you get an object which looks like this:
   {
     //privates
     _events: [],
+    _running: true,
     
     //public fields
     isKeylogger: true,
