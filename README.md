@@ -10,8 +10,13 @@ To use lewibs-keylogger in a project:
 
 ```js
   import Keylogger from 'lewibs-keylogger';
+  
+  //activate global
+  Keylogger.instance.start();
+  
+  //or
 
-  //code
+  //new keylogger instannce
   let logger = new Keylogger();
 ```
 
