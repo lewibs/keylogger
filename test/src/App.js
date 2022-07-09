@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import {Keylogger} from 'lewibs-keylogger';
+import Keylogger from 'lewibs-keylogger';
 
 function App() {
   const [logger, setLogger] = React.useState(new Keylogger());

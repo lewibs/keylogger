@@ -151,6 +151,4 @@ class Keylogger {
     }
 }
 
-module.exports = {
-    Keylogger: Keylogger,
-}
+module.exports = Keylogger;
