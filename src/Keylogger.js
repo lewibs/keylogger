@@ -1,7 +1,7 @@
-const WHEEL = "wheel";
-const LEFTMOUSE = "leftmouse";
-const MIDDLEMOUSE = "middlemouse";
-const RIGHTMOUSE = "rightmouse";
+export const WHEEL = "wheel";
+export const LEFTMOUSE = "leftmouse";
+export const MIDDLEMOUSE = "middlemouse";
+export const RIGHTMOUSE = "rightmouse";
 
 class Keylogger {
     
